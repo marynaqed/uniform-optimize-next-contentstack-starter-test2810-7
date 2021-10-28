@@ -16,7 +16,8 @@ export const RegisterForm: React.FC<Entry<RegistrationFormFields>> = ({
   const { tracker } = useUniformTracker();
 
   const onRegister = () => {
-    document.cookie = 'unfrmconf_registered=true; path=/; samesite=lax';
+    //document.cookie = 'unfrmconf_registered=true; path=/; samesite=lax';
+    tracker.addEnrichment({name: 'colour', value: 'red', str: 100});
     tracker.reevaluateSignals();
     setRegistered(true);
   };
